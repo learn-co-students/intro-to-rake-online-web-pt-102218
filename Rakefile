@@ -9,10 +9,11 @@ task :hola do
   puts "hola de Rake!"
 end
 end
-desc 'Make sure you have a console rake task'
-task :console do
+desc 'drop into the Pry console'
+task :console => :environment do
 Pry.start
 end
+
 task :environment do
   require_relative './config/environment'
 end
